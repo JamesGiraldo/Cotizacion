@@ -3,7 +3,8 @@ import { StyleSheet, View, TextInput, Text } from 'react-native';
 import colors from '../utils/colors'
 import RNPickerSelect from 'react-native-picker-select';
 
-export default function Form() {
+export default function Form(props) {
+    const { setCapital, setInterest, setMonths } = props;
     return (
         <View style={styles.viewForm}>
             <View style={styles.viewInputs}>
@@ -11,16 +12,25 @@ export default function Form() {
                     placeholder="Cantidad a pedir."
                     keyboardType="numeric"
                     style={styles.input}
+                    // ===== Con esto vemos lo que tiene la caja de testo 
+                    // onChange={e => console.log(e.nativeEvent.text)}
+                    onChange={( e ) => setCapital(e.nativeEvent.text)}
                 />
                 <TextInput
                     placeholder="Interes %."
                     keyboardType="numeric"
                     style={[styles.input, styles.inputPercentage]}
+                    onChange={( e ) => setInterest(e.nativeEvent.text)}
                 />
             </View>
             <RNPickerSelect
-                style={picketSelectStyles}
-                onValueChange={(value) => console.log(value)}
+                style={picketSelectStyles}                
+                // onValueChange={(value) => console.log(value)}
+                onValueChange={(value) => setMonths(value)}
+                placeholder={{
+                    label: 'Selecciona los plazos...',
+                    value: null
+                }}
                 items={[
                     { label: '3 meses', value: 3 },
                     { label: '6 meses', value: 6 },
@@ -87,6 +97,6 @@ const picketSelectStyles = StyleSheet.create({
         borderRadius: 8,
         color: 'black',
         paddingRight: 30,
-        backgroundColor: '#fff'
+        backgroundColor: 'white'
     }
 });
