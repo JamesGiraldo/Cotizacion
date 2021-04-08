@@ -18,7 +18,7 @@ export default function App(){
 
   useEffect( () => {
     // if (capital && interest && months) {
-    //   calculate();      
+    //   calculate();
     // }else{
     //   reset();
     // }
@@ -40,9 +40,9 @@ export default function App(){
       const i = interest / 100;
       const fee = capital / (( 1 - Math.pow(i + 1, -months)) / i);
       setTotal({
-        monthlyFree: fee.toFixed(2).replace('.', ','),
+        monthlyFee: fee.toFixed(2).replace('.', ','),
         totalPayable: (fee * months).toFixed(2).replace('.', ',')
-      });      
+      });
     }
   }
 
@@ -56,14 +56,14 @@ export default function App(){
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.background}/>
-        <Text style={styles.titleApp}> Cotizador de Prestamos</Text>  
-        <Form 
+        <Text style={styles.titleApp}> Cotizador de Prestamos</Text>
+        <Form
           setCapital={setCapital}
           setInterest={setInterest}
           setMonths={setMonths}
         />
       </SafeAreaView>
-      <ResultCalculation 
+      <ResultCalculation
         capital={capital}
         interest={interest}
         months={months}
@@ -76,7 +76,7 @@ export default function App(){
 
 // declarar css
 const styles = StyleSheet.create({
-  safeArea: {    
+  safeArea: {
     height: 290,
     alignItems: "center",
   },

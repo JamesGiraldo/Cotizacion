@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@react-native-community/picker": "^1.8.1",
-    "@react-native-picker/picker": "^1.9.4",
-    "pod-install": "^0.1.13",
+    "@react-native-picker/picker": "^1.9.8",
+    "pod-install": "^0.1.14",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-form-select-picker": "0.0.10",
