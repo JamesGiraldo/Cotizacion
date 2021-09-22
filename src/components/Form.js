@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     viewForm: {
         position: 'absolute',
         bottom: 0,
-        width: '85%',
+        width: '90%',
         paddingHorizontal: 50,
         backgroundColor: colors.PRIMARY_COLOR_DARK,
         borderRadius: 30,
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
     inputPercentage: {
-        width: "40%",
+        width: "52%",
         marginLeft: 5
     }
 });
